@@ -1,0 +1,31 @@
+{
+  "name": "translations",
+  "data": [
+    {
+      "id": "1",
+      "title": "Title One",
+      "source": "Source One",
+      "foreign": ["Wasser, Wasser, überall", "Und alle Bretter schrumpften;", "Wasser, Wasser, überall", "Noch irgendein Tropfen zu trinken."],
+      "english": ["Water, water, every where,", "And all the boards did shrink;", "Water, water, everywhere,", "Nor any drop to drink."]
+    },
+    {
+      "id": "2",
+      "title": "Title Two",
+      "source": "Source Two",
+      "foreign": [
+        "Ist das Liebe, die ich fühle",
+        "Ist das die Liebe, nach der ich gesucht habe?",
+        "Ist das Liebe oder träume ich",
+        "Dies muss Liebe sein",
+        "Weil es mich wirklich festhält"
+      ],
+      "english": [
+        "Is this love that I'm feeling",
+        "Is this the love that I've been searching for",
+        "Is this love or am I dreaming",
+        "This must be love",
+        "Cause it's really got a hold on me"
+      ]
+    }
+  ]
+}
