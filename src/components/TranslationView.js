@@ -26,15 +26,15 @@ class TranslationView extends Component {
     this.setState({
       title: currentTranslation.title,
       source: currentTranslation.source,
-      foreign: currentTranslation.foreign.map((line, index) => (
-        <span key={index}>
-          {line}
+      foreign: currentTranslation.foreign.map(line => (
+        <span key={line.id}>
+          {line.line}
           <br />
         </span>
       )),
-      english: currentTranslation.english.map((line, index) => (
-        <span key={index}>
-          {line}
+      english: currentTranslation.english.map(line => (
+        <span key={line.id}>
+          {line.line}
           <br />
         </span>
       )),
@@ -48,15 +48,15 @@ class TranslationView extends Component {
       this.setState({
         title: currentTranslation.title,
         source: currentTranslation.source,
-        foreign: currentTranslation.foreign.map((line, index) => (
-          <span key={index}>
-            {line}
+        foreign: currentTranslation.foreign.map(line => (
+          <span key={line.id}>
+            {line.line}
             <br />
           </span>
         )),
-        english: currentTranslation.english.map((line, index) => (
-          <span key={index}>
-            {line}
+        english: currentTranslation.english.map(line => (
+          <span key={line.id}>
+            {line.line}
             <br />
           </span>
         )),
@@ -153,8 +153,8 @@ TranslationView.propTypes = {
     id: PropTypes.string,
     title: PropTypes.string,
     source: PropTypes.string,
-    foreign: PropTypes.arrayOf(PropTypes.string),
-    english: PropTypes.arrayOf(PropTypes.string),
+    foreign: PropTypes.arrayOf(PropTypes.object),
+    english: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,
   currentTranslationId: PropTypes.string.isRequired,
   updateTranslationList: PropTypes.func.isRequired,
