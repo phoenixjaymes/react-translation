@@ -28,8 +28,8 @@ class TranslationUpdate extends Component {
         id: currentTranslationId,
         title: currentTranslation.title,
         source: currentTranslation.source,
-        foreign: currentTranslation.foreign.join('\n'),
-        english: currentTranslation.english.join('\n'),
+        foreign: currentTranslation.foreign.map(line => line.line).join('\n'),
+        english: currentTranslation.english.map(line => line.line).join('\n'),
       });
     } else {
       this.setState({
@@ -104,12 +104,23 @@ class TranslationUpdate extends Component {
     const { currentTranslation, updateTranslationList, viewTranslation } = this.props;
     const translationList = JSON.parse(localStorage.getItem('translationList'));
     const translations = translationList.data;
+
+    const linesToObjects = (text) => {
+      const arrText = text.split(/\n|\r/);
+      const arrObjects = [];
+      for (let i = 0; i < arrText.length; i += 1) {
+        arrObjects.push({ id: `${i}`, line: arrText[i] });
+      }
+
+      return arrObjects;
+    };
+
     const newTranslation = {
       id,
       title,
       source,
-      foreign: foreign.split(/\n|\r/),
-      english: english.split(/\n|\r/),
+      foreign: linesToObjects(foreign),
+      english: linesToObjects(english),
     };
 
     if (currentTranslation === undefined) {
@@ -189,9 +200,9 @@ TranslationUpdate.propTypes = {
     id: PropTypes.string,
     title: PropTypes.string,
     source: PropTypes.string,
-    foreign: PropTypes.arrayOf(PropTypes.string),
-    english: PropTypes.arrayOf(PropTypes.string),
-  }).isRequired,
+    foreign: PropTypes.arrayOf(PropTypes.object),
+    english: PropTypes.arrayOf(PropTypes.object),
+  }),
   currentTranslationId: PropTypes.string.isRequired,
   updateTranslationList: PropTypes.func.isRequired,
   viewTranslation: PropTypes.func.isRequired,
