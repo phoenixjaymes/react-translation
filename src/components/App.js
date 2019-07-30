@@ -99,7 +99,7 @@ class App extends Component {
 
     return (
       <ErrorBoundary>
-        <div className="mt-4 pt-2 pt-sm-3 pt-md-4 mt-lg-5">
+        <div className="mb-3 mt-4 pt-2 pt-sm-3 pt-md-4 mt-lg-5">
           <Navbar className="navBar py-0" variant="purp" expand="lg" fixed="top">
             <Container>
               <Row className="w-100">
