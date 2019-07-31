@@ -3,8 +3,8 @@
   "data": [
     {
       "id": "1",
-      "title": "Title One",
-      "source": "Source One",
+      "title": "Rime of the Ancient Mariner",
+      "source": "Samuel Taylor Coleridge",
       "foreign": [
         {"id": "1", "line": "Wasser, Wasser, überall"},
         {"id": "2", "line": "Und alle Bretter schrumpften;"},
@@ -20,8 +20,8 @@
     },
     {
       "id": "2",
-      "title": "Title Two",
-      "source": "Source Two",
+      "title": "Is This Love",
+      "source": "Whitesnake",
       "foreign": [
         {"id": "1", "line": "Ist das Liebe, die ich fühle"},
         {"id": "2", "line": "Ist das die Liebe, nach der ich gesucht habe?"},
