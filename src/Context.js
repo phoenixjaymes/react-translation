@@ -83,6 +83,13 @@ export class Provider extends Component {
     this.setState({ translations: translationList.data });
   }
 
+  resetCurrentTranslation = () => {
+    this.setState({
+      currentTranslationId: undefined,
+      currentTranslation: undefined,
+    });
+  }
+
   render() {
     const {
       boxType, translations, currentTranslationId, currentTranslation, viewMessage,
@@ -100,6 +107,7 @@ export class Provider extends Component {
         handleAddClick: this.handleAddClick,
         handleUpdateClick: this.handleUpdateClick,
         updateTranslationList: this.updateTranslationList,
+        resetCurrentTranslation: this.resetCurrentTranslation,
       },
     };
 
