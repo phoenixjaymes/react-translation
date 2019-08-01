@@ -2,7 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TranslationList = ({ translations, viewTranslation }) => {
+const TranslationList = ({ context }) => {
+  const { translations, actions } = context;
   const titles = translations.map((item) => {
     let { title } = item;
 
@@ -15,8 +16,8 @@ const TranslationList = ({ translations, viewTranslation }) => {
     return (
       <li
         key={item.id}
-        onClick={() => viewTranslation(item.id)}
-        onKeyPress={() => viewTranslation(item.id)}
+        onClick={() => actions.viewTranslation(item.id)}
+        onKeyPress={() => actions.viewTranslation(item.id)}
       >
         {title}
       </li>
@@ -31,8 +32,7 @@ const TranslationList = ({ translations, viewTranslation }) => {
 };
 
 TranslationList.propTypes = {
-  translations: PropTypes.arrayOf(PropTypes.object).isRequired,
-  viewTranslation: PropTypes.func.isRequired,
+  context: PropTypes.shape(),
 };
 
 export default TranslationList;
