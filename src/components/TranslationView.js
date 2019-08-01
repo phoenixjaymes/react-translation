@@ -20,9 +20,9 @@ class TranslationView extends Component {
   }
 
   componentDidMount() {
-    const {
-      currentTranslation, viewMessage,
-    } = this.props;
+    const { context } = this.props;
+    const { currentTranslation, viewMessage } = context;
+
     this.setState({
       title: currentTranslation.title,
       source: currentTranslation.source,
@@ -43,6 +43,9 @@ class TranslationView extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    // const { context } = this.props;
+    // const { currentTranslation, viewMessage } = context;
+
     const { currentTranslation } = this.props;
     if (prevProps.currentTranslation !== currentTranslation) {
       this.setState({
@@ -88,25 +91,25 @@ class TranslationView extends Component {
   }
 
   deleteTranslation = () => {
-    const { currentTranslationId, updateTranslationList } = this.props;
+    const { context } = this.props;
+    const { currentTranslationId, actions } = context;
     const translationList = JSON.parse(localStorage.getItem('translationList'));
     const translations = translationList.data;
-    const newTranslations = translations.filter((translation) => {
-      return parseInt(translation.id, 10) !== parseInt(currentTranslationId, 10);
-    });
+    const newTranslations = translations.filter(translation => (
+      parseInt(translation.id, 10) !== parseInt(currentTranslationId, 10)
+    ));
 
     translationList.data = newTranslations;
 
     // Stringify translation list add to storage
     localStorage.setItem('translationList', JSON.stringify(translationList));
 
-    updateTranslationList(translationList);
+    actions.updateTranslationList(translationList);
   }
 
   render() {
-    const {
-      currentTranslationId, handleUpdateClick,
-    } = this.props;
+    const { context } = this.props;
+    const { currentTranslationId, actions } = context;
     const {
       title, source, foreign, english, response, isDialogShown,
     } = this.state;
@@ -134,7 +137,7 @@ class TranslationView extends Component {
           </Col>
         </Row>
         <p>{response}</p>
-        <Button variant="rpurp" onClick={() => handleUpdateClick(currentTranslationId)}>Update</Button>
+        <Button variant="rpurp" onClick={() => actions.handleUpdateClick(currentTranslationId)}>Update</Button>
         &nbsp;
         <Button variant="rpurp" onClick={() => this.handleDeleteClick(currentTranslationId)}>Delete</Button>
         <Dialog
@@ -149,6 +152,7 @@ class TranslationView extends Component {
 }
 
 TranslationView.propTypes = {
+  context: PropTypes.shape(),
   currentTranslation: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,

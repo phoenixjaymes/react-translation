@@ -21,7 +21,8 @@ class TranslationUpdate extends Component {
   }
 
   componentDidMount() {
-    const { currentTranslation, currentTranslationId } = this.props;
+    const { context } = this.props;
+    const { currentTranslation, currentTranslationId } = context;
 
     if (currentTranslation !== undefined) {
       this.setState({
@@ -43,14 +44,16 @@ class TranslationUpdate extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { currentTranslation } = this.props;
+    // const { currentTranslation } = this.props;
+    const { context } = this.props;
+    const { currentTranslation } = context;
     if (prevProps.currentTranslation !== currentTranslation) {
-      this.setState({
-        title: '',
-        source: '',
-        foreign: '',
-        english: '',
-      });
+      // this.setState({
+      //   title: '',
+      //   source: '',
+      //   foreign: '',
+      //   english: '',
+      // });
     }
   }
 
@@ -84,7 +87,6 @@ class TranslationUpdate extends Component {
     this.setState({ isDialogShown: true });
   }
 
-  // Validate the form
   isValid = () => {
     const {
       title, source, foreign, english,
@@ -101,7 +103,8 @@ class TranslationUpdate extends Component {
     const {
       id, title, source, foreign, english,
     } = this.state;
-    const { currentTranslation, updateTranslationList, viewTranslation } = this.props;
+    const { context } = this.props;
+    const { currentTranslation, actions } = context;
     const translationList = JSON.parse(localStorage.getItem('translationList'));
     const translations = translationList.data;
 
@@ -137,10 +140,10 @@ class TranslationUpdate extends Component {
     // Stringify translation list and add to storage
     localStorage.setItem('translationList', JSON.stringify(translationList));
 
-    updateTranslationList(translationList);
+    actions.updateTranslationList(translationList);
 
     if (currentTranslation === undefined) {
-      viewTranslation(id, true);
+      actions.viewTranslation(id, true);
     }
 
     this.setState({ response: 'Your translation was updated'});
@@ -150,9 +153,8 @@ class TranslationUpdate extends Component {
     const {
       title, source, foreign, english, response, isDialogShown,
     } = this.state;
-    const {
-      currentTranslation,
-    } = this.props;
+    const { context } = this.props;
+    const { currentTranslation } = context;
     const sectionLabel = currentTranslation === undefined ? 'Add Translation' : 'Update Translation';
     const translationType = currentTranslation === undefined ? 'add' : 'update';
 
@@ -196,6 +198,7 @@ class TranslationUpdate extends Component {
 }
 
 TranslationUpdate.propTypes = {
+  context: PropTypes.shape(),
   currentTranslation: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
