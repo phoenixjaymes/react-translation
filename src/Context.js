@@ -17,16 +17,32 @@ export class Provider extends Component {
 
   componentDidMount() {
     // If no song list add songs to storage
+
     const translationList = JSON.parse(localStorage.getItem('translationList'));
+
+    const highlightedList = this.addHighLightedProp();
 
     if (!translationList) {
       // Stringify translation list add to storage
-      localStorage.setItem('translationList', JSON.stringify(initTranslations));
-      this.setState({ translations: initTranslations.data });
+      localStorage.setItem('translationList', JSON.stringify(highlightedList));
+      this.setState({ translations: highlightedList.data });
     } else {
       this.setState({ translations: translationList.data });
     }
   }
+
+  addHighLightedProp = () => (
+    {
+      name: 'translations',
+      data: initTranslations.data.map(item => (
+        {
+          ...item,
+          english: item.english.map(lyric => ({ ...lyric, highlight: 'false' })),
+          foreign: item.foreign.map(lyric => ({ ...lyric, highlight: 'false' })),
+        }
+      )),
+    }
+  );
 
   handleTitleClick = () => {
     this.setState({ boxType: 'home' });
