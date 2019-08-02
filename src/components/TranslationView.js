@@ -19,55 +19,6 @@ class TranslationView extends Component {
     isDialogShown: false,
   }
 
-  componentDidMount() {
-    const { context } = this.props;
-    const { currentTranslation, viewMessage } = context;
-
-    this.setState({
-      title: currentTranslation.title,
-      source: currentTranslation.source,
-      foreign: currentTranslation.foreign.map(line => (
-        <span key={line.id}>
-          {line.line}
-          <br />
-        </span>
-      )),
-      english: currentTranslation.english.map(line => (
-        <span key={line.id}>
-          {line.line}
-          <br />
-        </span>
-      )),
-      response: viewMessage,
-    });
-  }
-
-  componentDidUpdate(prevProps) {
-    // const { context } = this.props;
-    // const { currentTranslation, viewMessage } = context;
-
-    const { currentTranslation } = this.props;
-    if (prevProps.currentTranslation !== currentTranslation) {
-      this.setState({
-        title: currentTranslation.title,
-        source: currentTranslation.source,
-        foreign: currentTranslation.foreign.map(line => (
-          <span key={line.id}>
-            {line.line}
-            <br />
-          </span>
-        )),
-        english: currentTranslation.english.map(line => (
-          <span key={line.id}>
-            {line.line}
-            <br />
-          </span>
-        )),
-        response: '',
-      });
-    }
-  }
-
   handleDialogYesClick = () => {
     this.setState({
       title: '',
@@ -100,19 +51,51 @@ class TranslationView extends Component {
     ));
 
     translationList.data = newTranslations;
-
-    // Stringify translation list add to storage
     localStorage.setItem('translationList', JSON.stringify(translationList));
-
     actions.updateTranslationList(translationList);
+    actions.resetCurrentTranslation();
   }
+
+  getTranslation = (currentTranslation) => {
+    if (currentTranslation !== undefined) {
+      return (
+        {
+          title: currentTranslation.title,
+          source: currentTranslation.source,
+          foreign: currentTranslation.foreign.map(line => (
+            <span key={line.id}>
+              {line.line}
+              <br />
+            </span>
+          )),
+          english: currentTranslation.english.map(line => (
+            <span key={line.id}>
+              {line.line}
+              <br />
+            </span>
+          )),
+        }
+      );
+    }
+
+    return (
+      {
+        title: '',
+        source: '',
+        foreign: '',
+        english: '',
+      }
+    );
+  };
 
   render() {
     const { context } = this.props;
-    const { currentTranslationId, actions } = context;
+    const { currentTranslationId, actions, currentTranslation } = context;
+    const { response, isDialogShown } = this.state;
+
     const {
-      title, source, foreign, english, response, isDialogShown,
-    } = this.state;
+      title, source, foreign, english,
+    } = this.getTranslation(currentTranslation);
 
     return (
       <Form>
