@@ -206,9 +206,9 @@ TranslationUpdate.propTypes = {
     foreign: PropTypes.arrayOf(PropTypes.object),
     english: PropTypes.arrayOf(PropTypes.object),
   }),
-  currentTranslationId: PropTypes.string.isRequired,
-  updateTranslationList: PropTypes.func.isRequired,
-  viewTranslation: PropTypes.func.isRequired,
+  currentTranslationId: PropTypes.string,
+  updateTranslationList: PropTypes.func,
+  viewTranslation: PropTypes.func,
 };
 
 export default TranslationUpdate;

@@ -39,7 +39,6 @@ const TranslationBox = ({ context }) => {
 
 TranslationBox.propTypes = {
   context: PropTypes.shape(),
-  boxType: PropTypes.string.isRequired,
   currentTranslation: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,

@@ -55,7 +55,6 @@ const TranslationHome = ({ context }) => {
 
 TranslationHome.propTypes = {
   context: PropTypes.shape(),
-  handleAddClick: PropTypes.func.isRequired,
 };
 
 export default TranslationHome;

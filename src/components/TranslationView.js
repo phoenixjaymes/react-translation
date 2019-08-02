@@ -11,20 +11,12 @@ import Dialog from './Dialog';
 
 class TranslationView extends Component {
   state = {
-    title: '',
-    source: '',
-    english: '',
-    foreign: '',
     response: '',
     isDialogShown: false,
   }
 
   handleDialogYesClick = () => {
     this.setState({
-      title: '',
-      source: '',
-      foreign: '',
-      english: '',
       response: 'The translation has been deleted',
       isDialogShown: false,
     });
@@ -142,11 +134,11 @@ TranslationView.propTypes = {
     source: PropTypes.string,
     foreign: PropTypes.arrayOf(PropTypes.object),
     english: PropTypes.arrayOf(PropTypes.object),
-  }).isRequired,
-  currentTranslationId: PropTypes.string.isRequired,
-  updateTranslationList: PropTypes.func.isRequired,
-  handleUpdateClick: PropTypes.func.isRequired,
-  viewMessage: PropTypes.string.isRequired,
+  }),
+  currentTranslationId: PropTypes.string,
+  updateTranslationList: PropTypes.func,
+  handleUpdateClick: PropTypes.func,
+  viewMessage: PropTypes.string,
 };
 
 export default TranslationView;
