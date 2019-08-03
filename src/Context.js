@@ -20,29 +20,51 @@ export class Provider extends Component {
 
     const translationList = JSON.parse(localStorage.getItem('translationList'));
 
-    const highlightedList = this.addHighLightedProp();
-
     if (!translationList) {
-      // Stringify translation list add to storage
-      localStorage.setItem('translationList', JSON.stringify(highlightedList));
-      this.setState({ translations: highlightedList.data });
+      localStorage.setItem('translationList', JSON.stringify(initTranslations));
+      this.setState({ translations: initTranslations.data });
     } else {
       this.setState({ translations: translationList.data });
     }
   }
 
-  addHighLightedProp = () => (
-    {
-      name: 'translations',
-      data: initTranslations.data.map(item => (
-        {
-          ...item,
-          english: item.english.map(lyric => ({ ...lyric, highlight: 'false' })),
-          foreign: item.foreign.map(lyric => ({ ...lyric, highlight: 'false' })),
+  addHighlightProp = (e) => {
+    const id = e.target.getAttribute('data-id');
+    const { currentTranslation } = this.state;
+    const newList = {
+      ...currentTranslation,
+      foreign: currentTranslation.foreign.map((line) => {
+        if (line.id === id) {
+          return ({
+            id: line.id,
+            line: line.line,
+            highlight: true,
+          });
         }
-      )),
-    }
-  );
+
+        return ({
+          id: line.id,
+          line: line.line,
+        });
+      }),
+      english: currentTranslation.english.map((line) => {
+        if (line.id === id) {
+          return ({
+            id: line.id,
+            line: line.line,
+            highlight: true,
+          });
+        }
+
+        return ({
+          id: line.id,
+          line: line.line,
+        });
+      }),
+    };
+
+    this.setState({ currentTranslation: newList });
+  };
 
   handleTitleClick = () => {
     this.setState({ boxType: 'home' });
@@ -80,7 +102,7 @@ export class Provider extends Component {
     const newId = (parseInt(ids[0], 10) + 1).toString();
 
     this.setState({
-      boxType: 'update',
+      boxType: 'add',
       currentTranslationId: newId,
       currentTranslation: undefined,
     });
@@ -97,13 +119,6 @@ export class Provider extends Component {
 
   updateTranslationList = (translationList) => {
     this.setState({ translations: translationList.data });
-  }
-
-  resetCurrentTranslation = () => {
-    this.setState({
-      currentTranslationId: undefined,
-      currentTranslation: undefined,
-    });
   }
 
   render() {
@@ -123,7 +138,7 @@ export class Provider extends Component {
         handleAddClick: this.handleAddClick,
         handleUpdateClick: this.handleUpdateClick,
         updateTranslationList: this.updateTranslationList,
-        resetCurrentTranslation: this.resetCurrentTranslation,
+        addHighlightProp: this.addHighlightProp,
       },
     };
 
@@ -153,5 +168,5 @@ export default function withContext(WrappedComponent) {
         {context => <WrappedComponent {...props} context={context} />}
       </Context.Consumer>
     );
-  }
+  };
 }
