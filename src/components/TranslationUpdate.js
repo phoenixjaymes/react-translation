@@ -146,7 +146,7 @@ class TranslationUpdate extends Component {
       actions.viewTranslation(id, true);
     }
 
-    this.setState({ response: 'Your translation was updated'});
+    this.setState({ response: 'Your translation was updated' });
   }
 
   render() {
