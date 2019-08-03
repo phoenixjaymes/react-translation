@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Provider } from './Context'
+import { Provider } from './Context';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+
+import './index.css';
 
 ReactDOM.render(
   <Provider>
