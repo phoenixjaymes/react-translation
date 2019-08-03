@@ -43,20 +43,6 @@ class TranslationUpdate extends Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
-    // const { currentTranslation } = this.props;
-    const { context } = this.props;
-    const { currentTranslation } = context;
-    if (prevProps.currentTranslation !== currentTranslation) {
-      // this.setState({
-      //   title: '',
-      //   source: '',
-      //   foreign: '',
-      //   english: '',
-      // });
-    }
-  }
-
   handleDialogYesClick = () => {
     this.setState({
       isDialogShown: false,
