@@ -15,6 +15,13 @@ class TranslationView extends Component {
     isDialogShown: false,
   }
 
+  componentDidMount() {
+    const { context } = this.props;
+    const { viewMessage } = context;
+
+    this.setState({ response: viewMessage });
+  }
+
   handleDialogYesClick = () => {
     this.setState({
       response: 'The translation has been deleted',
@@ -45,7 +52,6 @@ class TranslationView extends Component {
     translationList.data = newTranslations;
     localStorage.setItem('translationList', JSON.stringify(translationList));
     actions.updateTranslationList(translationList);
-    actions.resetCurrentTranslation();
   }
 
   getTranslation = (currentTranslation) => {
@@ -55,13 +61,13 @@ class TranslationView extends Component {
           title: currentTranslation.title,
           source: currentTranslation.source,
           foreign: currentTranslation.foreign.map(line => (
-            <span key={line.id}>
+            <span key={line.id} data-id={line.id} className={line.highlight ? 'highlight' : ''}>
               {line.line}
               <br />
             </span>
           )),
           english: currentTranslation.english.map(line => (
-            <span key={line.id}>
+            <span key={line.id} data-id={line.id} className={line.highlight ? 'highlight' : ''}>
               {line.line}
               <br />
             </span>
@@ -104,13 +110,14 @@ class TranslationView extends Component {
         <Row className="pt-3">
           <Col md={6}>
             <h3 className="textBoxLabel mb-2 font-weight-bold">Foreign</h3>
-            <div className="textBox">{foreign}</div>
+            <div className="textBox" onClick={actions.addHighlightProp}>{foreign}</div>
           </Col>
           <Col md={6}>
-            <p className="textBoxLabel mb-2 font-weight-bold">English</p>
-            <div className="textBox">{english}</div>
+            <h3 className="textBoxLabel mb-2 font-weight-bold">English</h3>
+            <div className="textBox" onClick={actions.addHighlightProp}>{english}</div>
           </Col>
         </Row>
+
         <p>{response}</p>
         <Button variant="rpurp" onClick={() => actions.handleUpdateClick(currentTranslationId)}>Update</Button>
         &nbsp;
