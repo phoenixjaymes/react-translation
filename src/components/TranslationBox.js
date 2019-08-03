@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import TranslationHome from './TranslationHome';
 import TranslationView from './TranslationView';
+import TranslationAdd from './TranslationAdd';
 import TranslationUpdate from './TranslationUpdate';
 import TranslationAll from './TranslationAll';
 
@@ -10,6 +11,7 @@ import withContext from '../Context';
 
 const TransHomeWithContext = withContext(TranslationHome);
 const TransViewWithContext = withContext(TranslationView);
+const TransAddWithContext = withContext(TranslationAdd);
 const TransUpdateWithContext = withContext(TranslationUpdate);
 const TransAllWithContext = withContext(TranslationAll);
 
@@ -19,6 +21,12 @@ const TranslationBox = ({ context }) => {
   if (boxType === 'view') {
     return (
       <TransViewWithContext />
+    );
+  }
+
+  if (boxType === 'add') {
+    return (
+      <TransAddWithContext />
     );
   }
 
