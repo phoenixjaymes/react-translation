@@ -1,0 +1,41 @@
+{
+  "name": "translations",
+  "data": [
+    {
+      "id": "1",
+      "title": "Rime of the Ancient Mariner",
+      "source": "Samuel Taylor Coleridge",
+      "foreign": [
+        {"id": "1", "line": "Wasser, Wasser, überall"},
+        {"id": "2", "line": "Und alle Bretter schrumpften;"},
+        {"id": "3", "line": "Wasser, Wasser, überall"},
+        {"id": "4", "line": "Noch irgendein Tropfen zu trinken."}
+      ],
+      "english": [
+        {"id": "1", "line": "Water, water, every where,"},
+        {"id": "2", "line": "And all the boards did shrink;"},
+        {"id": "3", "line": "Water, water, everywhere,"},
+        {"id": "4", "line": "Nor any drop to drink."}
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Is This Love",
+      "source": "Whitesnake",
+      "foreign": [
+        {"id": "1", "line": "Ist das Liebe, die ich fühle"},
+        {"id": "2", "line": "Ist das die Liebe, nach der ich gesucht habe?"},
+        {"id": "3", "line": "Ist das Liebe oder träume ich"},
+        {"id": "4", "line": "Dies muss Liebe sein"},
+        {"id": "5", "line": "Weil es mich wirklich festhält"}
+      ],
+      "english": [
+        {"id": "1", "line": "Is this love that I'm feeling"},
+        {"id": "2", "line": "Is this the love that I've been searching for"},
+        {"id": "3", "line": "Is this love or am I dreaming"},
+        {"id": "4", "line": "This must be love"},
+        {"id": "5", "line": "Cause it's really got a hold on me"}
+      ]
+    }
+  ]
+}
