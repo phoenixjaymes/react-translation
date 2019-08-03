@@ -24,23 +24,13 @@ class TranslationUpdate extends Component {
     const { context } = this.props;
     const { currentTranslation, currentTranslationId } = context;
 
-    if (currentTranslation !== undefined) {
-      this.setState({
-        id: currentTranslationId,
-        title: currentTranslation.title,
-        source: currentTranslation.source,
-        foreign: currentTranslation.foreign.map(line => line.line).join('\n'),
-        english: currentTranslation.english.map(line => line.line).join('\n'),
-      });
-    } else {
-      this.setState({
-        id: currentTranslationId,
-        title: '',
-        source: '',
-        foreign: '',
-        english: '',
-      });
-    }
+    this.setState({
+      id: currentTranslationId,
+      title: currentTranslation.title,
+      source: currentTranslation.source,
+      foreign: currentTranslation.foreign.map(line => line.line).join('\n'),
+      english: currentTranslation.english.map(line => line.line).join('\n'),
+    });
   }
 
   handleDialogYesClick = () => {
