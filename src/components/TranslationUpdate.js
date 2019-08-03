@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Row,
-  Col,
-  Form,
-  Button,
-} from 'react-bootstrap';
 
-import Dialog from './Dialog';
+import TranslationForm from './TranslationForm';
 
 class TranslationUpdate extends Component {
   state = {
@@ -77,7 +71,7 @@ class TranslationUpdate extends Component {
       id, title, source, foreign, english,
     } = this.state;
     const { context } = this.props;
-    const { currentTranslation, actions } = context;
+    const { actions } = context;
     const translationList = JSON.parse(localStorage.getItem('translationList'));
     const translations = translationList.data;
 
@@ -99,25 +93,16 @@ class TranslationUpdate extends Component {
       english: linesToObjects(english),
     };
 
-    if (currentTranslation === undefined) {
-      translations.push(newTranslation);
-    } else {
-      const index = translations.findIndex(
-        translation => parseInt(translation.id, 10) === parseInt(id, 10),
-      );
-      translations.splice(index, 1, newTranslation);
-    }
+    const index = translations.findIndex(
+      translation => parseInt(translation.id, 10) === parseInt(id, 10),
+    );
+    translations.splice(index, 1, newTranslation);
 
     translationList.data = translations;
 
-    // Stringify translation list and add to storage
     localStorage.setItem('translationList', JSON.stringify(translationList));
 
     actions.updateTranslationList(translationList);
-
-    if (currentTranslation === undefined) {
-      actions.viewTranslation(id, true);
-    }
 
     this.setState({ response: 'Your translation was updated' });
   }
@@ -126,46 +111,22 @@ class TranslationUpdate extends Component {
     const {
       title, source, foreign, english, response, isDialogShown,
     } = this.state;
-    const { context } = this.props;
-    const { currentTranslation } = context;
-    const sectionLabel = currentTranslation === undefined ? 'Add Translation' : 'Update Translation';
-    const translationType = currentTranslation === undefined ? 'add' : 'update';
 
     return (
-      <Form>
-        <h1>{sectionLabel}</h1>
-        <Row className="border-bottom pb-1">
-          <Col sm={6}>
-            <Form.Control className="mb-1 mb-sm-0" type="text" placeholder="Title" name="title" value={title} onChange={this.handleChange} />
-          </Col>
-          <Col sm={6}>
-            <Form.Control className="mb-1 mb-sm-0" type="text" placeholder="Source" name="source" value={source} onChange={this.handleChange} />
-          </Col>
-        </Row>
-
-        <Row className="pt-3">
-          <Col md={6}>
-            <Form.Group controlId="exampleForm.ControlTextarea1">
-              <Form.Label className="mb-2 font-weight-bold">Foreign</Form.Label>
-              <Form.Control className="textArea" as="textarea" rows="3" name="foreign" value={foreign} onChange={this.handleChange} />
-            </Form.Group>
-          </Col>
-          <Col md={6}>
-            <Form.Group controlId="exampleForm.ControlTextarea1">
-              <Form.Label className="mb-2 font-weight-bold">English</Form.Label>
-              <Form.Control className="textArea" as="textarea" rows="3" name="english" value={english} onChange={this.handleChange} />
-            </Form.Group>
-          </Col>
-        </Row>
-        <p>{response}</p>
-        <Button variant="rpurp" onClick={this.handleButtonClick}>{sectionLabel}</Button>
-        <Dialog
-          translationType={translationType}
-          isDialogShown={isDialogShown}
-          handleDialogYesClick={this.handleDialogYesClick}
-          handleDialogCloseClick={this.handleDialogCloseClick}
-        />
-      </Form>
+      <TranslationForm
+        title={title}
+        source={source}
+        foreign={foreign}
+        english={english}
+        response={response}
+        isDialogShown={isDialogShown}
+        sectionLabel="Update Translation"
+        translationType="update"
+        handleChange={this.handleChange}
+        handleButtonClick={this.handleButtonClick}
+        handleDialogYesClick={this.handleDialogYesClick}
+        handleDialogCloseClick={this.handleDialogCloseClick}
+      />
     );
   }
 }
