@@ -56,13 +56,10 @@ class TranslationUpdate extends Component {
     });
   }
 
-  handleTitle = e => this.setState({ title: e.target.value });
-
-  handleSource = e => this.setState({ source: e.target.value });
-
-  handleForeign = e => this.setState({ foreign: e.target.value });
-
-  handleEnglish = e => this.setState({ english: e.target.value });
+  handleChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
 
   handleButtonClick = () => {
     if (!this.isValid()) {
@@ -149,10 +146,10 @@ class TranslationUpdate extends Component {
         <h1>{sectionLabel}</h1>
         <Row className="border-bottom pb-1">
           <Col sm={6}>
-            <Form.Control className="mb-1 mb-sm-0" type="text" placeholder="Title" value={title} onChange={this.handleTitle} />
+            <Form.Control className="mb-1 mb-sm-0" type="text" placeholder="Title" name="title" value={title} onChange={this.handleChange} />
           </Col>
           <Col sm={6}>
-            <Form.Control className="mb-1 mb-sm-0" type="text" placeholder="Source" value={source} onChange={this.handleSource} />
+            <Form.Control className="mb-1 mb-sm-0" type="text" placeholder="Source" name="source" value={source} onChange={this.handleChange} />
           </Col>
         </Row>
 
@@ -160,13 +157,13 @@ class TranslationUpdate extends Component {
           <Col md={6}>
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label className="mb-2 font-weight-bold">Foreign</Form.Label>
-              <Form.Control className="textArea" as="textarea" rows="3" value={foreign} onChange={this.handleForeign} />
+              <Form.Control className="textArea" as="textarea" rows="3" name="foreign" value={foreign} onChange={this.handleChange} />
             </Form.Group>
           </Col>
           <Col md={6}>
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label className="mb-2 font-weight-bold">English</Form.Label>
-              <Form.Control className="textArea" as="textarea" rows="3" value={english} onChange={this.handleEnglish} />
+              <Form.Control className="textArea" as="textarea" rows="3" name="english" value={english} onChange={this.handleChange} />
             </Form.Group>
           </Col>
         </Row>
