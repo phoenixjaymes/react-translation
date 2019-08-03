@@ -1,41 +1,650 @@
-{
-  "name": "translations",
-  "data": [
+
     {
-      "id": "1",
-      "title": "Rime of the Ancient Mariner",
-      "source": "Samuel Taylor Coleridge",
-      "foreign": [
-        {"id": "1", "line": "Wasser, Wasser, überall"},
-        {"id": "2", "line": "Und alle Bretter schrumpften;"},
-        {"id": "3", "line": "Wasser, Wasser, überall"},
-        {"id": "4", "line": "Noch irgendein Tropfen zu trinken."}
-      ],
-      "english": [
-        {"id": "1", "line": "Water, water, every where,"},
-        {"id": "2", "line": "And all the boards did shrink;"},
-        {"id": "3", "line": "Water, water, everywhere,"},
-        {"id": "4", "line": "Nor any drop to drink."}
-      ]
-    },
-    {
-      "id": "2",
-      "title": "Is This Love",
-      "source": "Whitesnake",
-      "foreign": [
-        {"id": "1", "line": "Ist das Liebe, die ich fühle"},
-        {"id": "2", "line": "Ist das die Liebe, nach der ich gesucht habe?"},
-        {"id": "3", "line": "Ist das Liebe oder träume ich"},
-        {"id": "4", "line": "Dies muss Liebe sein"},
-        {"id": "5", "line": "Weil es mich wirklich festhält"}
-      ],
-      "english": [
-        {"id": "1", "line": "Is this love that I'm feeling"},
-        {"id": "2", "line": "Is this the love that I've been searching for"},
-        {"id": "3", "line": "Is this love or am I dreaming"},
-        {"id": "4", "line": "This must be love"},
-        {"id": "5", "line": "Cause it's really got a hold on me"}
-      ]
+        "name": "translations",
+        "data": [
+            {
+                "id": "1",
+                "title": "Rime of the Ancient Mariner",
+                "source": "Samuel Taylor Coleridge",
+                "foreign": [
+                    {
+                        "id": "1",
+                        "line": "Wasser, Wasser, überall"
+                    },
+                    {
+                        "id": "2",
+                        "line": "Und alle Bretter schrumpften;"
+                    },
+                    {
+                        "id": "3",
+                        "line": "Wasser, Wasser, überall"
+                    },
+                    {
+                        "id": "4",
+                        "line": "Noch irgendein Tropfen zu trinken."
+                    }
+                ],
+                "english": [
+                    {
+                        "id": "1",
+                        "line": "Water, water, every where,"
+                    },
+                    {
+                        "id": "2",
+                        "line": "And all the boards did shrink;"
+                    },
+                    {
+                        "id": "3",
+                        "line": "Water, water, everywhere,"
+                    },
+                    {
+                        "id": "4",
+                        "line": "Nor any drop to drink."
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "title": "Is This Love",
+                "source": "Whitesnake",
+                "foreign": [
+                    {
+                        "id": "1",
+                        "line": "Ist das Liebe, die ich fühle"
+                    },
+                    {
+                        "id": "2",
+                        "line": "Ist das die Liebe, nach der ich gesucht habe?"
+                    },
+                    {
+                        "id": "3",
+                        "line": "Ist das Liebe oder träume ich"
+                    },
+                    {
+                        "id": "4",
+                        "line": "Dies muss Liebe sein"
+                    },
+                    {
+                        "id": "5",
+                        "line": "Weil es mich wirklich festhält"
+                    }
+                ],
+                "english": [
+                    {
+                        "id": "1",
+                        "line": "Is this love that I'm feeling"
+                    },
+                    {
+                        "id": "2",
+                        "line": "Is this the love that I've been searching for"
+                    },
+                    {
+                        "id": "3",
+                        "line": "Is this love or am I dreaming"
+                    },
+                    {
+                        "id": "4",
+                        "line": "This must be love"
+                    },
+                    {
+                        "id": "5",
+                        "line": "Cause it's really got a hold on me"
+                    }
+                ]
+            },
+            {
+                "id": "3",
+                "title": "Nicht anders gelernt",
+                "source": "Max Giesinger",
+                "foreign": [
+                    {
+                        "id": "0",
+                        "line": "Zerbrochenes Glas, Tränen zum Nachtisch"
+                    },
+                    {
+                        "id": "1",
+                        "line": "Ich habs nicht anders gelernt"
+                    },
+                    {
+                        "id": "2",
+                        "line": "Doppeltes Taschengeld, zwei Halbe zu Hause"
+                    },
+                    {
+                        "id": "3",
+                        "line": "Ich habs nicht anders gelernt"
+                    },
+                    {
+                        "id": "4",
+                        "line": "Dass man sich liebt, und dann nicht mehr"
+                    },
+                    {
+                        "id": "5",
+                        "line": "Ich habs nicht anders gelernt, yeah"
+                    },
+                    {
+                        "id": "6",
+                        "line": "Ich habs nicht anders gelernt"
+                    },
+                    {
+                        "id": "7",
+                        "line": ""
+                    },
+                    {
+                        "id": "8",
+                        "line": "Das Schreien, Schweigen, Weinen hat mich verändert"
+                    },
+                    {
+                        "id": "9",
+                        "line": "Und die Risse bleiben da"
+                    },
+                    {
+                        "id": "10",
+                        "line": "Warten, Hoffen, Fragen, dass sich was verbessert"
+                    },
+                    {
+                        "id": "11",
+                        "line": "Das es wird, wie es früher war"
+                    },
+                    {
+                        "id": "12",
+                        "line": "Das Bild, in der Ecke"
+                    },
+                    {
+                        "id": "13",
+                        "line": "Es verstaubt, doch wir lächeln"
+                    },
+                    {
+                        "id": "14",
+                        "line": "So hab ich es lang nicht mehr gesehen"
+                    },
+                    {
+                        "id": "15",
+                        "line": "Ich kann uns fast nicht mehr erkennen"
+                    },
+                    {
+                        "id": "16",
+                        "line": ""
+                    },
+                    {
+                        "id": "17",
+                        "line": "Keine Gespräche über Schweigen vor'm Fernseher"
+                    },
+                    {
+                        "id": "18",
+                        "line": "Ich habs nicht anders gelernt"
+                    },
+                    {
+                        "id": "19",
+                        "line": "Probleme vertagen oder nicht ernst nehmen"
+                    },
+                    {
+                        "id": "20",
+                        "line": "Ich habs nicht anders gelernt"
+                    },
+                    {
+                        "id": "21",
+                        "line": "Dass man seinen Mann nicht steht, wenns mal schwer wird"
+                    },
+                    {
+                        "id": "22",
+                        "line": "Ich habs nicht anders gelernt, yeah"
+                    },
+                    {
+                        "id": "23",
+                        "line": "Ich habs nicht anders gelernt"
+                    },
+                    {
+                        "id": "24",
+                        "line": ""
+                    },
+                    {
+                        "id": "25",
+                        "line": "Das Schreien, Schweigen, Weinen hat mich verändert"
+                    },
+                    {
+                        "id": "26",
+                        "line": "Und die Risse bleiben da"
+                    },
+                    {
+                        "id": "27",
+                        "line": "Warten, Hoffen, Fragen, dass sich was verbessert"
+                    },
+                    {
+                        "id": "28",
+                        "line": "Das es wird, wie es früher war"
+                    },
+                    {
+                        "id": "29",
+                        "line": "Das Bild, in der Ecke"
+                    },
+                    {
+                        "id": "30",
+                        "line": "Es verstaubt, doch wir lächeln"
+                    },
+                    {
+                        "id": "31",
+                        "line": "So hab ich es lang nicht mehr gesehen"
+                    },
+                    {
+                        "id": "32",
+                        "line": "Ich kann uns fast nicht mehr erkennen"
+                    }
+                ],
+                "english": [
+                    {
+                        "id": "0",
+                        "line": "Shattered glass, tears for dessert"
+                    },
+                    {
+                        "id": "1",
+                        "line": "I did not learn otherwise"
+                    },
+                    {
+                        "id": "2",
+                        "line": "Double pocket money, two half at home"
+                    },
+                    {
+                        "id": "3",
+                        "line": "I did not learn otherwise"
+                    },
+                    {
+                        "id": "4",
+                        "line": "That you love yourself, and then not anymore"
+                    },
+                    {
+                        "id": "5",
+                        "line": "I did not learn otherwise, yeah"
+                    },
+                    {
+                        "id": "6",
+                        "line": "I did not learn otherwise"
+                    },
+                    {
+                        "id": "7",
+                        "line": ""
+                    },
+                    {
+                        "id": "8",
+                        "line": "The screaming, silence, crying has changed me"
+                    },
+                    {
+                        "id": "9",
+                        "line": "And the cracks stay there"
+                    },
+                    {
+                        "id": "10",
+                        "line": "Waiting, hoping, asking, that something is improving"
+                    },
+                    {
+                        "id": "11",
+                        "line": "That's how it used to be"
+                    },
+                    {
+                        "id": "12",
+                        "line": "The picture, in the corner"
+                    },
+                    {
+                        "id": "13",
+                        "line": "It's dusty, but we smile"
+                    },
+                    {
+                        "id": "14",
+                        "line": "I have not seen it like that for a long time"
+                    },
+                    {
+                        "id": "15",
+                        "line": "I almost can not recognize each other"
+                    },
+                    {
+                        "id": "16",
+                        "line": ""
+                    },
+                    {
+                        "id": "17",
+                        "line": "No talking about silence in front of the TV"
+                    },
+                    {
+                        "id": "18",
+                        "line": "I did not learn otherwise"
+                    },
+                    {
+                        "id": "19",
+                        "line": "Postpone problems or do not take them seriously"
+                    },
+                    {
+                        "id": "20",
+                        "line": "I did not learn otherwise"
+                    },
+                    {
+                        "id": "21",
+                        "line": "That one does not stand his man when it gets hard"
+                    },
+                    {
+                        "id": "22",
+                        "line": "I did not learn otherwise, yeah"
+                    },
+                    {
+                        "id": "23",
+                        "line": "I did not learn otherwise"
+                    },
+                    {
+                        "id": "24",
+                        "line": ""
+                    },
+                    {
+                        "id": "25",
+                        "line": "The screaming, silence, crying has changed me"
+                    },
+                    {
+                        "id": "26",
+                        "line": "And the cracks stay there"
+                    },
+                    {
+                        "id": "27",
+                        "line": "Waiting, hoping, asking, that something is improving"
+                    },
+                    {
+                        "id": "28",
+                        "line": "That's how it used to be"
+                    },
+                    {
+                        "id": "29",
+                        "line": "The picture, in the corner"
+                    },
+                    {
+                        "id": "30",
+                        "line": "It's dusty, but we smile"
+                    },
+                    {
+                        "id": "31",
+                        "line": "I have not seen it like that for a long time"
+                    },
+                    {
+                        "id": "32",
+                        "line": "I almost can not recognize each other"
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "title": "Wo bist du",
+                "source": "Rammstein",
+                "foreign": [
+                    {
+                        "id": "0",
+                        "line": "Ich liebe dich, ich liebe dich nicht"
+                    },
+                    {
+                        "id": "1",
+                        "line": "Ich liebe dich nicht mehr, ich liebe dich nicht mehr"
+                    },
+                    {
+                        "id": "2",
+                        "line": "Ich liebe dich nicht mehr oder weniger als du"
+                    },
+                    {
+                        "id": "3",
+                        "line": "Als du mich geliebt hast, als du mich noch geliebt hast"
+                    },
+                    {
+                        "id": "4",
+                        "line": ""
+                    },
+                    {
+                        "id": "5",
+                        "line": "Die schönen Mädchen sind nicht schön"
+                    },
+                    {
+                        "id": "6",
+                        "line": "Die warmen Hände sind so kalt"
+                    },
+                    {
+                        "id": "7",
+                        "line": "Alle Uhren bleiben stehen"
+                    },
+                    {
+                        "id": "8",
+                        "line": "Lachen ist nicht mehr gesund und bald"
+                    },
+                    {
+                        "id": "9",
+                        "line": ""
+                    },
+                    {
+                        "id": "10",
+                        "line": "Such ich dich hinter dem Licht"
+                    },
+                    {
+                        "id": "11",
+                        "line": "Wo bist du, wo bist du"
+                    },
+                    {
+                        "id": "12",
+                        "line": "So allein will ich nicht sein"
+                    },
+                    {
+                        "id": "13",
+                        "line": "Wo bist du, wo bist du"
+                    },
+                    {
+                        "id": "14",
+                        "line": ""
+                    },
+                    {
+                        "id": "15",
+                        "line": "Die schönen Mädchen sind nicht schön"
+                    },
+                    {
+                        "id": "16",
+                        "line": "Die warmen Hände sind so kalt"
+                    },
+                    {
+                        "id": "17",
+                        "line": "Alle Uhren bleiben stehen"
+                    },
+                    {
+                        "id": "18",
+                        "line": "Lachen ist nicht mehr gesund und bald"
+                    },
+                    {
+                        "id": "19",
+                        "line": ""
+                    },
+                    {
+                        "id": "20",
+                        "line": "Die schönen Mädchen sind nicht schön"
+                    },
+                    {
+                        "id": "21",
+                        "line": "Die warmen Hände sind so kalt"
+                    },
+                    {
+                        "id": "22",
+                        "line": "Alle Uhren bleiben stehen"
+                    },
+                    {
+                        "id": "23",
+                        "line": "Lachen ist nicht mehr gesund und bald"
+                    },
+                    {
+                        "id": "24",
+                        "line": ""
+                    },
+                    {
+                        "id": "25",
+                        "line": "Ich suche dich hinter dem Licht"
+                    },
+                    {
+                        "id": "26",
+                        "line": "Wo bist du, wo bist du"
+                    },
+                    {
+                        "id": "27",
+                        "line": "So allein will ich nicht sein"
+                    },
+                    {
+                        "id": "28",
+                        "line": "Wo bist du, wo bist du"
+                    },
+                    {
+                        "id": "29",
+                        "line": ""
+                    },
+                    {
+                        "id": "30",
+                        "line": "Ich suche dich unter jedem Stein"
+                    },
+                    {
+                        "id": "31",
+                        "line": "Wo bist du, wo bist du"
+                    },
+                    {
+                        "id": "32",
+                        "line": "Ich schlaf mit einem Messer ein"
+                    },
+                    {
+                        "id": "33",
+                        "line": "Wo bist du, wo bist du"
+                    }
+                ],
+                "english": [
+                    {
+                        "id": "0",
+                        "line": "I love you, I do not love you"
+                    },
+                    {
+                        "id": "1",
+                        "line": "I do not love you anymore, I do not love you anymore"
+                    },
+                    {
+                        "id": "2",
+                        "line": "I do not love you anymore or less than you"
+                    },
+                    {
+                        "id": "3",
+                        "line": "When you loved me, when you still loved me"
+                    },
+                    {
+                        "id": "4",
+                        "line": ""
+                    },
+                    {
+                        "id": "5",
+                        "line": "The beautiful girls are not beautiful"
+                    },
+                    {
+                        "id": "6",
+                        "line": "The warm hands are so cold"
+                    },
+                    {
+                        "id": "7",
+                        "line": "All clocks stand still"
+                    },
+                    {
+                        "id": "8",
+                        "line": "Laughing is not healthy anymore and soon"
+                    },
+                    {
+                        "id": "9",
+                        "line": ""
+                    },
+                    {
+                        "id": "10",
+                        "line": "I search for you behind the light"
+                    },
+                    {
+                        "id": "11",
+                        "line": "Where are you, where are you?"
+                    },
+                    {
+                        "id": "12",
+                        "line": "I do not want to be alone like that"
+                    },
+                    {
+                        "id": "13",
+                        "line": "Where are you, where are you?"
+                    },
+                    {
+                        "id": "14",
+                        "line": ""
+                    },
+                    {
+                        "id": "15",
+                        "line": "The beautiful girls are not beautiful"
+                    },
+                    {
+                        "id": "16",
+                        "line": "The warm hands are so cold"
+                    },
+                    {
+                        "id": "17",
+                        "line": "All clocks stand still"
+                    },
+                    {
+                        "id": "18",
+                        "line": "Laughing is not healthy anymore and soon"
+                    },
+                    {
+                        "id": "19",
+                        "line": ""
+                    },
+                    {
+                        "id": "20",
+                        "line": "The beautiful girls are not beautiful"
+                    },
+                    {
+                        "id": "21",
+                        "line": "The warm hands are so cold"
+                    },
+                    {
+                        "id": "22",
+                        "line": "All clocks stand still"
+                    },
+                    {
+                        "id": "23",
+                        "line": "Laughing is not healthy anymore and soon"
+                    },
+                    {
+                        "id": "24",
+                        "line": ""
+                    },
+                    {
+                        "id": "25",
+                        "line": "I'm looking for you behind the light"
+                    },
+                    {
+                        "id": "26",
+                        "line": "Where are you, where are you?"
+                    },
+                    {
+                        "id": "27",
+                        "line": "I do not want to be alone like that"
+                    },
+                    {
+                        "id": "28",
+                        "line": "Where are you, where are you?"
+                    },
+                    {
+                        "id": "29",
+                        "line": ""
+                    },
+                    {
+                        "id": "30",
+                        "line": "I look for you under every stone"
+                    },
+                    {
+                        "id": "31",
+                        "line": "Where are you, where are you?"
+                    },
+                    {
+                        "id": "32",
+                        "line": "I fall asleep with a knife"
+                    },
+                    {
+                        "id": "33",
+                        "line": "Where are you, where are you?"
+                    }
+                ]
+            }
+        ]
     }
-  ]
-}
